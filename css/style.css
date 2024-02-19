@@ -62,30 +62,88 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 /* Media query for phones */
-@media (max-width:800px) {
-  .phone-message {
-      display: block; /* Show the message on phones */
+@media (max-width: 767px) {
+  #home-section .row {
+      position: relative;
+  }
+
+  #home-section .col-md-8 {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 100%;
+      z-index: 1;
+      padding-top: 10%; /* Adjust this value to control the space between text and image */
+margin-top: -10%;
+font-size: 20px;
+  }
+
+  #home-section .col-md-4 {
+      position: relative;
+      height:20%;
+      border-bottom: 5px solid #ffc107;
+      background-position: top right;
+      background-size: cover;
+      overflow: hidden;
+  }
+
+  #home-section .col-md-4 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  #home-section .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
   }
 }
+@media(min-width :767px){
+.text{
+margin-top: 30%;
+}
+#home-section h1{
+font-size: 60px;
+}
+}
+.text{
+font-weight: 700;
+}
+.subheading{
+color: rgb(255, 189, 57);
+display: inline;
+box-sizing: border-box;
+font-weight: 800;
+font-weight: 600;
+font-family: 'Poppins', Arial, sans-serif;
+font-size: 14px;
+letter-spacing: 3px;
+line-height: 25.2px;
+text-transform: uppercase;
+text-size-adjust: 100%;
+}
+#home-section h1{
+font-weight: 800;
+font-family: 'Poppins', Arial, sans-serif;
 
-@media (max-width: 767.98px) {
-  .mobile-bg {
-      /* Add your mobile-specific styles here */
-      background-image: url(images/about.png); /* Change the background image for mobile */
-      height: 30%; /* Adjust the height for mobile */
-      border-bottom: 2px solid #ffc107; /* Adjust the border for mobile */
-      background-position: center center; /* Adjust background position for mobile */
-  }
+line-height: 48px;
+text-size-adjust: 100%;
+padding-top: 2%;
 
-  .ftco-animate.position-absolute {
-      /* Add your mobile-specific styles for text positioning here */
-      position: relative; /* Change position to relative for mobile */
-      top: initial; /* Reset top for mobile */
-      left: initial; /* Reset left for mobile */
-      transform: none; /* Reset transform for mobile */
-  }
+}
+#home-section h2{
+font-family: 'Poppins', Arial, sans-serif; 
+font-size: 30px;
+font-weight: 400;
+line-height: 45px;
+padding-top: 2%;
 }
 
+  
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

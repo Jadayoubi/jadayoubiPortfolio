@@ -2,11 +2,8 @@
  	duration: 800,
  	easing: 'linear'
  });
-
 (function($) {
-
 	"use strict";
-
 	$(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
@@ -15,10 +12,7 @@
     hideDistantElements: false,
     scrollProperty: 'scroll'
   });
-
-
 	var fullHeight = function() {
-
 		$('.js-fullheight').css('height', $(window).height());
 		$(window).resize(function(){
 			$('.js-fullheight').css('height', $(window).height());
@@ -40,37 +34,21 @@
 	// Scrollax
    $.Scrollax();
 
-
-
-   // Burger Menu
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
-
-			event.preventDefault();
-			$('body').toggleClass('nav-open');
-			if ( $('#ftco-nav').is(':visible') ) {
-				$(this).removeClass('active');
-			} else {
-				$(this).addClass('active');	
-			}
-
-			
-			
-		});
-
-	};
-	burgerMenu();
-
-
+   $(document).ready(function() {
+    // Close the navbar when a nav item is clicked
+    $('#ftco-nav a').on('click', function() {
+        $('.navbar-collapse').collapse('hide');
+    });
+});
 	var onePageClick = function() {
-
-
 		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
 	    event.preventDefault();
-
 	    var href = $.attr(this, 'href');
-
+  // Close the navbar if it's open
+  if ($('body').hasClass('nav-open')) {
+	$('body').removeClass('nav-open');
+	$('.js-fh5co-nav-toggle').removeClass('active');
+}
 	    $('html, body').animate({
 	        scrollTop: $($.attr(this, 'href')).offset().top - 70
 	    }, 500, function() {
@@ -79,10 +57,17 @@
 		});
 
 	};
-
 	onePageClick();
+	 // Burger Menu
+	var burgerMenu = function() {
+		$('body').on('click', '.js-fh5co-nav-toggle', function(event) {
+			event.preventDefault();
+			$('body').toggleClass('nav-open');
+			$(this).toggleClass('active');
+		});
+	};
+		burgerMenu();
 	
-
 	var carousel = function() {
 		$('.home-slider').owlCarousel({
 	    loop:true,
@@ -128,8 +113,17 @@
 			$this.find('.dropdown-menu').removeClass('show');
 		// }, 100);
 	});
-
-
+// Smooth scroll to section when a navigation link is clicked
+$(document).on('click', '#ftco-nav a[href^="#"]', function(event) {
+    event.preventDefault();
+console.log("link clicked");
+    var target = $($.attr(this, 'href'));
+    if (target.length) {
+        $('html, body').animate({
+            scrollTop: target.offset().top - 70
+        }, 500);
+    }
+});
 	$('#dropdown04').on('show.bs.dropdown', function () {
 	  console.log('show');
 	});
@@ -172,16 +166,10 @@
 			}
 		});
 	};
-	scrollWindow();
-
-	
-
+	scrollWindow();	
 	var counter = function() {
-		
 		$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
-
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
 				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
 				$('.number').each(function(){
 					var $this = $(this),
@@ -201,19 +189,13 @@
 
 	}
 	counter();
-
-
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
-
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
 				i++;
-
 				$(this.element).addClass('item-animate');
 				setTimeout(function(){
-
 					$('body .ftco-animate.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
@@ -230,15 +212,11 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
-				}, 100);
-				
+				}, 100);	
 			}
-
 		} , { offset: '95%' } );
 	};
 	contentWayPoint();
-
 	// magnific popup
 	$('.image-popup').magnificPopup({
     type: 'image',
@@ -269,10 +247,4 @@
 
     fixedContentPos: false
   });
-
-
-
-
-
 })(jQuery);
-
