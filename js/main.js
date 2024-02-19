@@ -1,6 +1,6 @@
  AOS.init({
  	duration: 800,
- 	easing: 'slide'
+ 	easing: 'linear'
  });
 
 (function($) {
@@ -48,7 +48,7 @@
 		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
 
 			event.preventDefault();
-
+			$('body').toggleClass('nav-open');
 			if ( $('#ftco-nav').is(':visible') ) {
 				$(this).removeClass('active');
 			} else {
@@ -93,6 +93,7 @@
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
+		touchDrag: true,
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
 	      0:{

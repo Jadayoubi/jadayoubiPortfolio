@@ -48,6 +48,43 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
+/* Default styles for the phone message */
+.phone-message {
+  display: none; /* Initially hide the message */
+  position: fixed;
+ 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Media query for phones */
+@media (max-width:800px) {
+  .phone-message {
+      display: block; /* Show the message on phones */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mobile-bg {
+      /* Add your mobile-specific styles here */
+      background-image: url(images/about.png); /* Change the background image for mobile */
+      height: 30%; /* Adjust the height for mobile */
+      border-bottom: 2px solid #ffc107; /* Adjust the border for mobile */
+      background-position: center center; /* Adjust background position for mobile */
+  }
+
+  .ftco-animate.position-absolute {
+      /* Add your mobile-specific styles for text positioning here */
+      position: relative; /* Change position to relative for mobile */
+      top: initial; /* Reset top for mobile */
+      left: initial; /* Reset left for mobile */
+      transform: none; /* Reset transform for mobile */
+  }
+}
 
 body {
   margin: 0;
@@ -1576,7 +1613,7 @@ pre {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; }
+    -webkit-overflow-scrolling:touch; }
     .table-responsive-xl > .table-bordered {
       border: 0; } }
 
@@ -3517,7 +3554,12 @@ input[type="button"].btn-block {
 .navbar-toggler .oi-menu::after {
     margin-top: 2px; /* Adjust as needed */
 }
-
+@media (max-width: 767.98px) {
+  body.nav-open {
+      overflow: hidden;
+  }
+}
+  
 }
 .navbar-toggler-icon {
   display: inline-block;
