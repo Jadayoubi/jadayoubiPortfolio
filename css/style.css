@@ -3506,7 +3506,19 @@ input[type="button"].btn-block {
   border-radius: 0.25rem; }
   .navbar-toggler:hover, .navbar-toggler:focus {
     text-decoration: none; }
+@media (max-width:991px) {
+  .navbar-toggler .oi-menu {
+    color: #6c757d; /* Set your desired color */
+    font-size: 15px; /* Set your desired font size */
+    /* Add any other styles as needed */
+}
 
+/* Optional: Adjust padding or margins to improve spacing */
+.navbar-toggler .oi-menu::after {
+    margin-top: 2px; /* Adjust as needed */
+}
+
+}
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
