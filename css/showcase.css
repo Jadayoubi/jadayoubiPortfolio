@@ -1,0 +1,73 @@
+body{
+    background-color: black;
+}
+.home{
+  padding-left:10% ; font-weight: 700; font-size: 5rem; color: #ffbd39;
+}
+.home a{
+  color: #ffbd39;
+}
+.home:hover{
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
+.card{
+background-color: #ffbd39;
+/* -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+
+}
+.card-body{
+  -webkit-animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+h1,h2,h4,h6,dt,.list{
+    color:#ffbd39; ;
+}
+li,p,dd{
+    color: black;
+}
+li{
+    margin: 10px;
+}
+.social-links .fa{
+  color: #ffbd39;
+  font-size: 3rem;
+padding: 10px;
+}
+.social-links .fa:hover, .social-links span:hover{
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+body{
+    background-color: black !important;
+  }
+    .card{
+      background-color: #ffbd39 !important;
+      
+    }
+    .card h2, .card h3{
+      color: black;
+    }
+    .card img{
+      border-top-left-radius: 5%;
+      border-top-right-radius: 5%;
+    }
+    .container .card{
+      border-radius: 15px;
+    }
+  
+    .btn{
+      color: white !important;
+      background-color: black !important;
+      
+    }
+    
+    .btn:hover{
+      color: black !important;
+      border: 3px solid black !important;
+      background-color: transparent !important;
+    }
+    .row{
+      align-items: flex-end;
+    }
