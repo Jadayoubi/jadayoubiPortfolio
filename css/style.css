@@ -48,6 +48,10 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
+  .btn:hover{
+    -webkit-animation: vibrate-1 0.3s linear infinite both;
+    animation: vibrate-1 0.3s linear infinite both;
+  }
 /* Default styles for the phone message */
 .phone-message {
   display: none; /* Initially hide the message */
@@ -102,12 +106,18 @@ font-size: 20px;
       z-index: 0;
   }
 }
+#home-section .btn:hover{
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
 @media(min-width :767px){
 .text{
 margin-top: 30%;
 }
 #home-section h1{
 font-size: 60px;
+-webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 }
 .text{
@@ -9303,6 +9313,7 @@ textarea.form-control {
     letter-spacing: 3px; }
   .heading-section h1.big {
     position: absolute;
+    
     top: 0px;
     left: 0;
     font-size: 7vw;
@@ -9531,7 +9542,10 @@ textarea.form-control {
 
 .contact-section .contact-info p a {
   color: #fff; }
-
+  
+.contact-info .box:hover{
+ transform: scale(1.2);
+}
 .contact-section .contact-form {
   width: 100%; }
   @media (max-width: 767.98px) {
